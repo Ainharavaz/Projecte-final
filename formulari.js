@@ -1,1 +1,3 @@
-ñmcom  cooma+M
+let nombre = document.getElementById("nom").value;
+
+
