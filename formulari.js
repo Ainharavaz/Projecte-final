@@ -1,14 +1,5 @@
-let nombre = document.getElementById("nom").value;
+let nom_cognom = document.getElementById("nom" + "cognom").value;
 function majuscula(){
-    document.getElementById("nom").value = nom.toUpperCase(primeraLletra);
+        document.getElementById("nom" + "cognom").value = nom_cognom.toUpperCase(primeraLletra);
     }
-
-
-let cognom = document.getElementById("cognom").value;
-function majuscula(){
-    document.getElementById("cognom").value = cognom.toUpperCase(primeraLletra);
-    }
-
-
-
 
