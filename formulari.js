@@ -137,3 +137,5 @@ function validarPrivacitat() {
     // Si está activado, la validación es correcta
     return true;
 }
+
+function netejarFormulari() {
