@@ -12,8 +12,25 @@
         <input type="text" id="nom" name="nom" onblur="primeraLletra()"><br><br>
         <label for="cognom">Cognom:</label>
         <input type="text" id="cognom" name="cognom" onblur="primeraLletra()"><br><br>
+        <select id="rang_edats" name="rang_edats" onchange="validarRangEdat()">
+            <option value="">Selecciona una opció</option> <!-- Opción por defecto -->
+            <option value="0-17">0-17</option>
+            <option value="18-25">18-25</option>
+            <option value="26-40">26-40</option>
+            <option value="41-55">41-55</option>
+            <option value="56-65">56-65</option>
+            <option value="més de 65">més de 65</option>
+        </select><br><br>
+        <label for="codiPostal">Codi Postal:</label>
+        <input type="text" id="codiPostal" onblur="codiPostal"><br><br>
+        <label for="correuElectronic">Correu Electrònic:</label>
+        <input type="email" id="correuElectronic" onblur="correuElectronic"><br><br>
+        <label for="contrasenya">Contrasenya:</label>
+        <input type="password" id="contrasenya" onblur="contrasenya">
+        <input type="checkbox" id="mostrarContrasenya" onclick="mostrarContrasenya()"> Mostrar Contrasenya<br><br>
         <input type="submit" value="Enviar">
     </form>
 </body>
 <script src="formulari.js"></script>
+<script src="formulari.css"></script>
 </html>
