@@ -120,7 +120,7 @@ function validarConfirmacio() {
         let pass2 = document.getElementById("confirmar_contrasenya");
         if (pass1 !== pass2.values) {
                     alert("Error: Les contrasenyes no coincideixen."); [1, 4]
-            setTimeout(() => pass2.focus(), 10); [1, 5]
+            document.getElementById("validarConfirmacio").focus();
         return false;
     }
     return true;
@@ -139,3 +139,11 @@ function validarPrivacitat() {
 }
 
 function netejarFormulari() {
+    document.getElementById("nom_cognoms").value = ""; 
+    document.getElementById("cp").value = "";
+    document.getElementById("contrasenya").value = "";
+    document.getElementById("confirmar_contrasenya").value = "";
+    document.getElementById("rang_edat").selectedIndex = 0;
+    document.getElementById("politica_privacitat").checked = false;
+    document.getElementById("nom_cognoms").focus();
+}
