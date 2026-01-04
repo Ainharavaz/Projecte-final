@@ -147,3 +147,12 @@ function netejarFormulari() {
     document.getElementById("politica_privacitat").checked = false;
     document.getElementById("nom_cognoms").focus();
 }
+
+function canviarVisibilitat() {
+    let inputPass = document.getElementById("campo_pass");
+    if (inputPass.type === "password") {
+        inputPass.type = "text"; // Ahora los caracteres son visibles
+    } else {
+        inputPass.type = "password"; // Volvemos a ocultarlos
+    }
+}
