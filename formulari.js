@@ -182,4 +182,20 @@ function enviarFormulari() {
     }
 }
 
+        let resum = document.getElementById("resum");
+        resum.innerHTML = "<h3>El formulari s'ha emplenat correctament</h3>";
+        
+        let p = document.createElement("p");
+        let dades = document.createTextNode("Usuari: " + document.getElementById("nomCognoms").value);
+        p.appendChild(dades);
+        resum.appendChild(p);
+    }
+};
+
+// Vinculamos validación al salir del campo (onblur) para cumplir el flujo 1.9 [3, 18, 19]
+document.getElementById("codiPostal").onblur = validarCP;
+document.getElementById("correu").onblur = validarCorreu;
+document.getElementById("pass").onblur = validarPass;
+
+
 
