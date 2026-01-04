@@ -13,7 +13,7 @@
         <label for="cognom">Cognom:</label>
         <input type="text" id="cognom" name="cognom" onblur="primeraLletra()"><br><br>
         <label for="rang_edats">Rang d'edats:</label>
-        <select id="rang_edats" name="rang_edats">
+        <select id="rang_edats" name="rang_edats" onchange="validarRangEdat()">
             <option value="">Selecciona una opció</option> <!-- Opción por defecto -->
             <option value="0-17">0-17</option>
             <option value="18-25">18-25</option>
