@@ -114,3 +114,14 @@ function contrasenya(){
         }
     return true;
 }  
+
+function validarConfirmacio() {
+        let pass1 = document.getElementById("contrasenya").value;
+        let pass2 = document.getElementById("confirmar_contrasenya");
+        if (pass1 !== pass2.values) {
+                    alert("Error: Les contrasenyes no coincideixen."); [1, 4]
+            setTimeout(() => pass2.focus(), 10); [1, 5]
+        return false;
+    }
+    return true;
+}
