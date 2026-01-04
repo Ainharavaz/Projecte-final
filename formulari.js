@@ -160,16 +160,16 @@ function canviarVisibilitat() {
 function enviarFormulari() {
     // 1. Ejecutar todas las validaciones previas (Nombre, CP, Password, etc.)
     // Solo si todas devuelven 'true', procedemos.
-    if (validarNom() && validarCP() && validarCorreu() && 
-        validarPassword() && validarConfirmacio()) {
+    if (validarNom() && validarRangEdat() && codiPostal() && 
+        correuElectronic() && contrasenya() && validarConfirmacio() && validarPrivacitat()) {
         
         // 2. Comprobar el Checkbox de Privacidad (Punto 1.7)
         // Usamos acceso directo por ID, el método preferido [8]
-        let check = document.getElementById("privacitat");
+        let check = document.getElementById("politica_privacitat");
         
-        if (!check.checked) {
+        if (!checkbox.checked) {
             alert("Has d'acceptar la política de privacitat.");
-            check.focus(); // Devolvemos el foco según el requisito 1.9 [1, 6]
+            checkbox.focus(); // Devolvemos el foco según el requisito 1.9 [1, 6]
             return; 
         }
 
@@ -181,4 +181,5 @@ function enviarFormulari() {
         imprimirResultats();
     }
 }
+
 
