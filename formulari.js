@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 function corregirMajuscules() {
     let nomInput = document.getElementById("nom");
     let cognomInput = document.getElementById("cognom");
@@ -116,126 +115,66 @@ function contrasenya(){
     return true;
 }  
     
-
-        
-        
-
-
-=======
-function corregirMajuscules() {
-    let nomInput = document.getElementById("nom");
-    let cognomInput = document.getElementById("cognom");
-    let nom = nomInput.value;
-    let cognom = cognomInput.value;
-    if (nom.length > 0) {
-        nom = nom[0].toUpperCase() + nom.substring(1);
-        nomInput.value = nom;
-    }
-    if (cognom.length > 0) {
-        cognom = cognom[0].toUpperCase() + cognom.substring(1);
-        cognomInput.value = cognom;
-    }
-}
-
-function primeraLletra() {
-    corregirMajuscules();
-}
-
-function validarRangEdat() {
-    let llista = document.getElementById("rang_edats");
-    let indexSeleccionat = llista.selectedIndex;
-    if (indexSeleccionat === 0) {
-        alert("Error: Es de seleccionar un rang d'edat vàlid.");
-        llista.focus(); 
+function validarConfirmacio() {
+        let pass1 = document.getElementById("contrasenya").value;
+        let pass2 = document.getElementById("confirmar_contrasenya");
+        if (pass1 !== pass2.values) {
+                alert("Error: Les contrasenyes no coincideixen."); 
+                document.getElementById("validarConfirmacio").focus();
+            
         return false;
+    }
+    return true;
+}
+
+function validarPrivacitat() {
+    let checkbox = document.getElementById("politica_privacitat");
+    if (!checkbox.checked) // el .cheched en serveis per veure si està seleccionat o no {
+        alert("Error: Has d'acceptar la política de privacitat per continuar."); // si no s'ha marcat la caixa error
+        checkbox.focus(); // es torna el focus 
+        return false;
+    }
+
+function mostrarContrasenya(){
+    contra = document.getElementById("contrasenya");
+    let checkbox = document.getElementById("mostrarContrasenya");
+    if (checkbox.checked){
+        contra.type = "text";
     } else {
-    let valor = llista.options[indexSeleccionat].value;
-    console.log("Rango seleccionado: " + valor);
-    return true;
+        contra.type = "password";
     }
 }
 
-function codiPostal(){
-    let num = document.getElementById("codiPostal").value;
-    let contador = 0;
-    let digit = true;
-    for (let i = 0; i < num.length; i++){
-        if (num[i] >= '0' && num[i] <= '9'){
-            digit = false;
-            break;
-        }else{
-            contador++;
-            }
-        if (contador > 5 || contador < 5){
-            alert("Error: El codi postal ha de tenir 5 dígits.");
-            document.getElementById("codiPostal").focus();
-            return false;
-        }else if (contador === 5){
-            return true;
-        }
-    }
+function netejarFormulari() {
+    document.getElementById("nom").value = ""; 
+    document.getElementById("cognom").value = "";
+    document.getElementById("correuElectronic").value = "";
+    document.getElementById("codiPostal").value = "";
+    document.getElementById("contrasenya").value = "";
+    document.getElementById("confirmar_contrasenya").value = "";
+    document.getElementById("rang_edats").selectedIndex = 0;
+    document.getElementById("politica_privacitat").checked = false;
 }
 
-function correuElectronic(){
-    let email = document.getElementById("correuElectronic").value;
-    let arrova = 0
-    let posicioArrova = -1;
-    let punt = false;
-    for (let i = 0; i < email.length; i++){
-        if (email[i] === "@"){
-            arrova++;
-            posicioArrova = i;
+function enviarFormulari() {
+    let enviar = document.getElementById("enviar").onclick
+    if (validarRangEdat() && validarConfirmacio() && validarPrivacitat() && contrasenya() && correuElectronic() && codiPostal()) {
+        if (!document.getElementById("politica_privacitat").checked) {
+            alert("Accepta la política de privacitat");
+            return;
         }
-        if (posicioArrova == 1){
-            for (let j = posicioArrova + 1; j < email.length; j++){
-                if (email[j] === "."){
-                    punt = true;
-                }
-            }
-        if (arrova !== 1 || punt === false) {
-            alert("Error: El correu electrònic no és vàlid.");
-            document.getElementById("correuElectronic").focus();
-            return false;           
-        }
-
-        }
-    }
-}
-
-function contrasenya(){
-    let contra = document.getElementById("contrasenya").value;
-    let maj = false;
-    let min = false;
-    let num = 0;
-    let especial = false
-    let carac = "!@#$%^&*()_+[]={};:\|,.<>/?";
-    
-    if (contra.length < 8){
-        alert("Error: la contrasenya ha de tenir almenys 8 caràcters");
-        document.getElementById("contrasenya").focus();
-        return false;
-    }
-    
-    for (let i = 0; i < contra.length; i++){
-        let lletra = contra[i];
         
-        if (lletra >= 'A' && lletra <= 'Z'){
-                    maj = true;
-        }else if (lletra >= 'a' && lletra <= 'z'){
-                    min = true;
-        }else if (lletra >= '0' && lletra <= '9'){
-                    num++;
-        }else if (carac.includes(lletra)){
-                    especial = true;
-                }
-    }
-
+        let resum = document.getElementById("resum");
+        resum.innerHTML = "<h3>El formulari s'ha emplenat correctament</h3>";
         
-    if (!maj || !min || num < 2 || !especial){
-            alert("Error: La contrasenya ha de tenir almenys 8 caràcters, una majúscula,  una minúscula, dos números i un caràcter especial.");
-            document.getElementById("contrasenya").focus();
-            return false;
-        }
-    return true;
-}  
->>>>>>> ee7fb0fa511358a56b6daf625259aa1aac0fe1eb
+        let p = document.createElement("p");
+        let dades = document.createTextNode("Usuari: " + document.getElementById("nom").value + " " + document.getElementById("cognom").value);
+        p.appendChild(dades);
+        resum.appendChild(p);
+    }
+}
+
+document.getElementById("codiPostal").onblur = codiPostal;
+document.getElementById("correuElectronic").onblur = correuElectronic;
+document.getElementById("contrasenya").onblur = contrasenya;
+document.getElementById("mostrarContrasenya").onclick = mostrarContrasenya;

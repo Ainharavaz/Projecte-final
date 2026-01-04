@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="formulari.css">
+    <title>Exercici 1</title>
 </head>
 <body>
     <h1>Formulari</h1>
@@ -12,10 +13,6 @@
         <input type="text" id="nom" name="nom" onblur="primeraLletra()"><br><br>
         <label for="cognom">Cognom:</label>
         <input type="text" id="cognom" name="cognom" onblur="primeraLletra()"><br><br>
-<<<<<<< HEAD
-=======
-        <label for="rang_edats">Rang d'edats:</label>
->>>>>>> ee7fb0fa511358a56b6daf625259aa1aac0fe1eb
         <select id="rang_edats" name="rang_edats" onchange="validarRangEdat()">
             <option value="">Selecciona una opció</option> <!-- Opción por defecto -->
             <option value="0-17">0-17</option>
@@ -24,7 +21,6 @@
             <option value="41-55">41-55</option>
             <option value="56-65">56-65</option>
             <option value="més de 65">més de 65</option>
-<<<<<<< HEAD
         </select><br><br>
         <label for="codiPostal">Codi Postal:</label>
         <input type="text" id="codiPostal" onblur="codiPostal"><br><br>
@@ -33,24 +29,16 @@
         <label for="contrasenya">Contrasenya:</label>
         <input type="password" id="contrasenya" onblur="contrasenya">
         <input type="checkbox" id="mostrarContrasenya" onclick="mostrarContrasenya()"> Mostrar Contrasenya<br><br>
-=======
->>>>>>> ee7fb0fa511358a56b6daf625259aa1aac0fe1eb
-        <input type="submit" value="Enviar">
-
-        <input type="password" id="contrasenya" name="contrasenya">
+        <label for="confirmar_contrasenya">Confirma la Contrasenya:</label>
         <input type="password" id="confirmar_contrasenya" onblur="validarConfirmacio()">
-            <input type="checkbox" id="veure_pass" onclick="canviarVisibilitat()"> Mostrar contrasenya
+        <input type="checkbox" id="mostrarContrasenya" onclick="mostrarContrasenya()"> Mostrar Contrasenya<br><br>
+        <input type="checkbox" id="politica_privacitat" name="privacitat">
+        <label for="politica_privacitat">He llegit i accepto la política de privacitat</label><br><br>
+        <label type="button">Esborrar</label>
+        <input type="button" value="Esborrar tot" onclick="netejarFormulari()"><br><br>
+        <input type="button" value="Enviar" onclick="validarFormulari()"><br><br>
     </form>
 </body>
 <script src="formulari.js"></script>
-<<<<<<< HEAD
 <script src="formulari.css"></script>
 </html>
-=======
-</html>
-
-</select>
-
-
-
->>>>>>> ee7fb0fa511358a56b6daf625259aa1aac0fe1eb
