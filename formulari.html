@@ -8,20 +8,24 @@
 <body>
     <h1>Formulari</h1>
     <form action="" name="Formulari">
-        <label for="nom_cognom">Nom i Cognom:</label>
-        <input type="text" id="nom_cognom" name="nom_cognom" onblur="primeraLletra()"><br><br>
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" name="nom" onblur="primeraLletra()"><br><br>
+        <label for="cognom">Cognom:</label>
+        <input type="text" id="cognom" name="cognom" onblur="primeraLletra()"><br><br>
+        <label for="rang_edats">Rang d'edats:</label>
+        <select id="rang_edats" name="rang_edats">
+            <option value="">Selecciona una opció</option> <!-- Opción por defecto -->
+            <option value="0-17">0-17</option>
+            <option value="18-25">18-25</option>
+            <option value="26-40">26-40</option>
+            <option value="41-55">41-55</option>
+            <option value="56-65">56-65</option>
+            <option value="més de 65">més de 65</option>
+        <input type="submit" value="Enviar">
     </form>
 </body>
 <script src="formulari.js"></script>
 </html>
 
-<label for="rang_edats">Rang d'edats:</label>
-<select id="rang_edats" name="rang_edats">
-    <option value="">Selecciona una opció</option> <!-- Opción por defecto -->
-    <option value="0-17">0-17</option>
-    <option value="18-25">18-25</option>
-    <option value="26-40">26-40</option>
-    <option value="41-55">41-55</option>
-    <option value="56-65">56-65</option>
-    <option value="més de 65">més de 65</option>
+
 </select>
