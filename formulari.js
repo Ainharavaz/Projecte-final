@@ -101,20 +101,16 @@ function contrasenya(){
                     min = true;
         }else if (lletra >= '0' && lletra <= '9'){
                     num++;
-        }else{
-            for (let j = 0; j < carac.length; j++){
-                if (lletra === carac[j]){
+        }else if (carac.includes(lletra)){
                     especial = true;
                 }
-            }
-        }
+    }
+
         
-        if (!maj || !min || num < 2 || !especial){
+    if (!maj || !min || num < 2 || !especial){
             alert("Error: La contrasenya ha de tenir almenys 8 caràcters, una majúscula,  una minúscula, dos números i un caràcter especial.");
             document.getElementById("contrasenya").focus();
             return false;
         }
-    }  
     return true;
-} 
-
+}  
