@@ -4,5 +4,10 @@ function majuscula(){
     }
 
 
+let nombre = document.getElementById("cognom").value;
+function majuscula(){
+    document.getElementById("cognom").value = nom.toUpperCase(primeraLletra);
+    }
+
 
 
