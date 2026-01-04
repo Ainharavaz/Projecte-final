@@ -125,3 +125,15 @@ function validarConfirmacio() {
     }
     return true;
 }
+
+function validarPrivacitat() {
+    let checkbox = document.getElementById("politica_privacitat");
+    if (!checkbox.checked) // el .cheched en serveis per veure si està seleccionat o no {
+        alert("Error: Has d'acceptar la política de privacitat per continuar."); // si no s'ha marcat la caixa error
+        checkbox.focus(); // es torna el focus 
+        return false;
+    }
+    
+    // Si está activado, la validación es correcta
+    return true;
+}
