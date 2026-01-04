@@ -157,3 +157,28 @@ function canviarVisibilitat() {
     }
 }
 
+function enviarFormulari() {
+    // 1. Ejecutar todas las validaciones previas (Nombre, CP, Password, etc.)
+    // Solo si todas devuelven 'true', procedemos.
+    if (validarNom() && validarCP() && validarCorreu() && 
+        validarPassword() && validarConfirmacio()) {
+        
+        // 2. Comprobar el Checkbox de Privacidad (Punto 1.7)
+        // Usamos acceso directo por ID, el método preferido [8]
+        let check = document.getElementById("privacitat");
+        
+        if (!check.checked) {
+            alert("Has d'acceptar la política de privacitat.");
+            check.focus(); // Devolvemos el foco según el requisito 1.9 [1, 6]
+            return; 
+        }
+
+        // 3. Si todo es correcto, mostrar mensaje de éxito [1]
+        alert("El formulari s’ha emplenat correctament");
+
+        // 4. Mostrar el contenido introducido en la propia página [1]
+        // Usamos innerHTML para escribir en un div de resultados [9]
+        imprimirResultats();
+    }
+}
+
