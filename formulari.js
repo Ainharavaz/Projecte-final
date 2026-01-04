@@ -22,3 +22,14 @@ function corregirMajuscules() {
         document.getElementById("cognom").value = cognom;
     }
 }
+let inputNom = document.getElementById("nomCognoms");
+inputNom.onblur = function() {
+    let paraules = this.value.split(" "); // Tratamos la cadena como array
+    for (let i = 0; i < paraules.length; i++) {
+        if (paraules[i].length > 0) {
+            // Capitalizamos la primera letra [9, 10]
+            paraules[i] = paraules[i].toUpperCase() + paraules[i].substring(1).toLowerCase();
+        }
+    }
+    this.value = paraules.join(" ");
+};
