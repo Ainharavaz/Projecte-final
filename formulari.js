@@ -18,3 +18,5 @@ function corregirMajuscules() {
 }
 
 1.2
+function validarEdat() {
+
