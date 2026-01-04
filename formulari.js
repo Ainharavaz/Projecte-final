@@ -128,7 +128,7 @@ function validarConfirmacio() {
 
 function validarPrivacitat() {
     let checkbox = document.getElementById("politica_privacitat");
-    if (!checkbox.checked) // el .cheched en serveis per veure si està seleccionat o no {
+    if (!checkbox.checked) // el .checked en serveix per veure si està seleccionat o no {
         alert("Error: Has d'acceptar la política de privacitat per continuar."); // si no s'ha marcat la caixa error
         checkbox.focus(); // es torna el focus 
         return false;
@@ -156,3 +156,4 @@ function canviarVisibilitat() {
         inputPass.type = "password"; // Volvemos a ocultarlos
     }
 }
+
