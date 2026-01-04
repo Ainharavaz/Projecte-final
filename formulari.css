@@ -1,0 +1,46 @@
+/* Regla 1: Estilo general del contenedor del formulario */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+* Regla para todas las etiquetas <label> */
+label {
+    color: #2c3e50; /* Un color determinado (azul oscuro) */
+    font-family: 'Verdana', sans-serif; /* Un tipo de letra determinado */
+    font-weight: bold; /* Negrita para que resalten */
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Regla 3: Diseño de los campos de texto y desplegables (Select) */
+input[type="text"], 
+input[type="password"], 
+select {
+    width: 300px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Regla 4: Estilo específico para los botones (Enviar y Esborrar) */
+input[type="button"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Regla 5: Estilo para el área donde se muestran los resultados (Punto 1.9) */
+#resultatFinal {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #e9f7ef;
+    border: 1px solid #28a745;
+    border-radius: 5px;
+    color: #155724;
+}
