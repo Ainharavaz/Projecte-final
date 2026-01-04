@@ -7,7 +7,7 @@ body {
 
 * Regla para todas las etiquetas <label> */
 label {
-    color: #2c3e50; /* Un color determinado (azul oscuro) */
+    color: green; 
     font-family: 'Verdana', sans-serif; /* Un tipo de letra determinado */
     font-weight: bold; /* Negrita para que resalten */
     display: block;
@@ -44,3 +44,4 @@ input[type="button"] {
     border-radius: 5px;
     color: #155724;
 }
+
