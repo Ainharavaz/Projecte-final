@@ -17,7 +17,7 @@ function exercici01() {
         accidents++;
         }
     let zonaResultats = document.getElementById("resultats");
-    zonaResultats.innerHTML = "<h3>Nombre total d'accidents: " + accidents + "</h3>";
+    zonaResultats.innerHTML = "<h3>Nombre total d'accidents: " + accidents + "</3>";
 }
 
 
@@ -97,5 +97,5 @@ function calcularAccidentPerDistricteSeleccionat() {
     let districteSeleccionat = document.getElementById("districtes").value; 
     let numAccidents = obj.filter(a => a.districte === districteSeleccionat).length;    
     let zonaResultats = document.getElementById("resultats");
-    zonaResultats.innerHTML = "<h3>Nombre d'accidents al districte " + districteSeleccionat + ": " + numAccidents + "</h3>";
-}   
+    zonaResultats.innerHTML = "<h3>Nombre d'accidents al districte " + districteSeleccionat + ": " + numAccidents + "<h3>";
+}  
