@@ -87,4 +87,6 @@ function exercici03() {
 
 function exercici04() {
     creaFormulari();
+    let selector = document.getElementById("districtes"); //per buscar els elements amb el id districtes
+    selector.addEventListener("change", calcularAccidentPerDistricteSeleccionat); // addEventListener és fa servir per controlar els events, en un element específic. Posem change que és el tipus d'esdeveniment.
 }
