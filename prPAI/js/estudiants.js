@@ -87,29 +87,17 @@ function exercici03() {
 
 function exercici04() {
     creaFormulari();
-    let selector = document.getElementById("districtes"); //per buscar els elements amb el id districtes
-    selector.addEventListener("change", calcularAccidentPerDistricteSeleccionat); // addEventListener és fa servir per controlar els events, en un element específic. Posem change que és el tipus d'esdeveniment.
+     let selector = document.getElementById("districtes"); //per buscar els elements amb el id districtes
+    selector.addEventListener("change", calcularAccidentPerDistricteSeleccionat); 
+
 }
+
 function calcularAccidentPerDistricteSeleccionat() {
-    let zona = document.getElementById("resultats");
-    let indexSeleccionat = llista.selectedIndex;
-    let valorSeleccionat = llista.options[indexSeleccionat].value; // recuperar valor del districte
-    let accidentsFiltrats = obj.filter(accident => accident.districte === valorSeleccionat); // filtrem per aconseguir només els accidents del districte seleccionat. 
-    let total = accidentsFiltrats.length;
+    let districteSeleccionat = document.getElementById("districtes").value; 
+    let numAccidents = obj.filter(a => a.districte === districteSeleccionat).length;    
     let zonaResultats = document.getElementById("resultats");
-    
-    let missatgeId = "info-conteo"; // Es recomendable añadir el resultado sin borrar el formulario para que el usuario pueda seguir buscando.
-    let p = document.getElementById(missatgeId);
-    
-    // Si ya existía un mensaje anterior, lo actualizamos; si no, lo creamos [10].
-    if (!p) {
-        p = document.createElement("p");
-        p.id = missatgeId;
-        zonaResultats.appendChild(p);
-    }
-    
-    p.innerHTML = "Has seleccionat el districte: <strong>" + valorSeleccionat + 
-                  "</strong>. El nombre total d'accidents és: <strong>" + total + "</strong>.";
+    zonaResultats.innerHTML = "<h3>Nombre d'accidents al districte " + districteSeleccionat + ": " + numAccidents + "<h3>";
+}  
     
     
     
