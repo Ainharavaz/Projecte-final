@@ -93,8 +93,15 @@ function exercici04() {
 }
 
 function calcularAccidentPerDistricteSeleccionat() {
-    let districteSeleccionat = document.getElementById("districtes").value; 
-    let numAccidents = obj.filter(a => a.districte === districteSeleccionat).length;    
+    let llista = document.getElementById("districtes");
+    let indexSeleccionat = llista.selectedIndex;
+    let textSeleccionat = llista.options[indexSeleccionat].value;
+    let numAccidents;
+      if (indexSeleccionat === 0) {
+          numAccidents = obj.filter(a => a.nDist === -1).length;
+    } else {
+        numAccidents = obj.filter(a => a.districte === textSeleccionat).length;
+    }  
     let zonaResultats = document.getElementById("resultats");
     zonaResultats.innerHTML = "<h3>Nombre d'accidents al districte " + districteSeleccionat + ": " + numAccidents + "<h3>";
 }  
