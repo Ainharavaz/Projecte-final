@@ -68,7 +68,8 @@ function exercici03() {
     let zona = document.getElementById("resultats");
     zona.innerHTML = "";
     let llistaUL = document.createElement("ul");
-
+    zona.innerHTML = "<h3>Llista d'accidents per districte:</h3>";
+   
     for (let i = 0; i <= 10; i++) {
         let textDistricte = (i === 0) ? "Altres: " : "Districte " + i + ": ";
         let valorCodi = (i === 0) ? -1 : i;
@@ -87,4 +88,14 @@ function exercici03() {
 
 function exercici04() {
     creaFormulari();
+     let selector = document.getElementById("districtes"); //per buscar els elements amb el id districtes
+    selector.addEventListener("change", calcularAccidentPerDistricteSeleccionat); 
+
 }
+
+function calcularAccidentPerDistricteSeleccionat() {
+    let districteSeleccionat = document.getElementById("districtes").value; 
+    let numAccidents = obj.filter(a => a.districte === districteSeleccionat).length;    
+    let zonaResultats = document.getElementById("resultats");
+    zonaResultats.innerHTML = "<h3>Nombre d'accidents al districte " + districteSeleccionat + ": " + numAccidents + "</h3>";
+}   
