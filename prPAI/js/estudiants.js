@@ -21,6 +21,40 @@ function mostrarTotalAccidents() {
     // 3. Modificamos el contenido del elemento para mostrar el total [8]
     zonaGroga.innerHTML = "El nombre total d’accidents que es produeixen a l’any seleccionat és: " + total;
 }
+
+function calcularSumaPorDistrito() {
+    // 1. Creamos un array de 11 posiciones inicializadas a 0.
+    // Usaremos la posición 0 para el distrito -1 y las posiciones 1-10 para el resto.
+    let comptadors = ; [3]
+
+    // 2. Recorremos el array global 'obj' que contiene todos los accidentes.
+    for (let i = 0; i < obj.length; i++) { [2, 4]
+        let codiDistricte = obj[i].nDist; // Obtenemos el código del accidente actual [2]
+
+        // 3. Lógica de suma: si el código es -1 (desconocido), sumamos en la posición 0.
+        if (codiDistricte === -1) { [5]
+            comptadors++;
+        } 
+        // Si el código está entre 1 y 10, sumamos 1 en su posición correspondiente.
+        else if (codiDistricte >= 1 && codiDistricte <= 10) { [6]
+            comptadors[codiDistricte]++; [7, 8]
+        }
+    }
+
+    // 4. Mostramos un ejemplo del resultado en la "zona amarilla" del HTML.
+    let zonaResultats = document.getElementById("resultats"); [9-11]
+    zonaResultats.innerHTML = "Accidents al Districte 1: " + comptadors[12]; [13]
+}
+
+
+
+
+
+
+
+
+
+    
 }
 
 function exercici02() {
