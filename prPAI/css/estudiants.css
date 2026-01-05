@@ -1,1 +1,60 @@
-/* Fitxer CSS estudiants */
+// regla 1 CSS, amb això fem que el contenidor amb la lletra no estigui pegada als bordes i que es pugui lleguir. 
+#resultats {
+    padding: 20px;
+    border: 2px solid #d4af37; /* Color dorado para resaltar */
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6; /* Mejora la legibilidad del texto [2] */
+}
+
+//regla 2 CSS, millor visualiització  
+#resultats ul {
+    padding: 0;
+    list-style-type: none; /* Elimina els punts per defecte [3] */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px; /* Espaiat entre targetes */
+}
+
+#resultats li {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid #d4af37; /* Color daurat consistent amb la zona groga [4] */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Dona profunditat a la dada */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease; /* Permet interactivitat visual */
+}
+
+#resultats li:hover { // el hover significa que activa l'estil únicament quan el ratolí estigui per sobre
+    transform: translateY(-5px); /* Efecte en passar el ratolí */
+    background-color: #fdfdfd;
+}
+
+//regla 3 CSS
+#districtes {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+//regla 4 CSS, els números d'accidents destaquin
+.total-destacat {
+    font-weight: bold; /* Se accede como fontWeight en JS [2] */
+    color: #e74c3c; /* Color rojo para resaltar la gravedad */
+    font-size: 1.2em;
+}
+
+// regla 4 CSS, aixó ens ajudarà ha identificar ràpidament la resposta 
+#missatge-resultat {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px dashed #3498db;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
