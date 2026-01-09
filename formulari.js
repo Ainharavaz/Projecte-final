@@ -21,13 +21,13 @@ function primeraLletra() {
 
 function validarRangEdat() {
     let llista = document.getElementById("rang_edats");
-    let indexSeleccionat = llista.selectedIndex;
+    let indexSeleccionat = llista.selectedIndex; // Es guarda l’índex de l’opció seleccionada dins del desplegable
     if (indexSeleccionat === 0) {
         console.log("Error: Es de seleccionar un rang d'edat vàlid.");
         llista.focus(); 
         return false;
     } else {
-    let valor = llista.options[indexSeleccionat].value;
+    let valor = llista.options[indexSeleccionat].value; //Guarda el valor de l’opció seleccionada
     console.log("Rang seleccionat: " + valor);
     }
     return true;
@@ -136,7 +136,7 @@ function validarConfirmacio() {
 
 function validarPrivacitat() {
     let checkbox = document.getElementById("politica_privacitat");
-    if (!checkbox.checked){ // el .cheched en serveis per veure si està seleccionat o no {
+    if (!checkbox.checked){ // el .checked en serveis per veure si està seleccionat o no {
         console.log("Error: Has d'acceptar la política de privacitat per continuar."); // si no s'ha marcat la caixa error
         checkbox.focus(); // es torna el focus 
         return false;
