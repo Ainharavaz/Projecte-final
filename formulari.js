@@ -183,11 +183,12 @@ function enviarFormulari() {
             console.log("Accepta la política de privacitat");
             return;
         }
-
+    // Comprova que totes les funcions de validació retornen true
         if (validarRangEdat() && validarConfirmacio() && validarPrivacitat() && contrasenya() && correuElectronic() && codiPostal()) {
-        
             let resum = document.getElementById("resum");
+    // Escriu un missatge dins de l'element resum indicant que el formulari s'ha emplenat correctament
             resum.innerHTML = "<h3>El formulari s'ha emplenat correctament</h3>";
+    // Afegeix informació detallada de l'usuari, recollint els valors dels camps del formulari
             resum.innerHTML += "<p><b>Usuari: </b>" +
                 document.getElementById("nom").value + " " +
                 document.getElementById("cognom").value + "<br>" +
