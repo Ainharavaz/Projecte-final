@@ -1,11 +1,12 @@
 function corregirMajuscules() {
     let nomInput = document.getElementById("nom");
+    // .getElementById és un mètode de JS que serveix per accedir a un element HTML concret a la pàg a partir del seu id
     let cognomInput = document.getElementById("cognom");
-    let nom = nomInput.value;
-    let cognom = cognomInput.value;
-    if (nom.length > 0) {
-        nom = nom[0].toUpperCase() + nom.substring(1);
-        nomInput.value = nom;
+    let nom = nomInput.value; // guardem valro actual dedl nom
+    let cognom = cognomInput.value; // guardem valor actual del cognom
+    if (nom.length > 0) { // comprovem que el nom no està buit 
+        nom = nom[0].toUpperCase() + nom.substring(1); // convertim primera lletra del nom en majúscula
+        nomInput.value = nom; // posem el valor corregit al camp corresponent
     }
     if (cognom.length > 0) {
         cognom = cognom[0].toUpperCase() + cognom.substring(1);
