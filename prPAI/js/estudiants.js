@@ -95,7 +95,7 @@ function exercici04() {
 
 function calcularAccidentPerDistricteSeleccionat() {
     let districteSeleccionat = document.getElementById("districtes").value; 
-    let numAccidents = obj.filter(a => a.districte === districteSeleccionat).length;    
+    let numAccidents = obj.filter(element => element.districte === districteSeleccionat).length; 
     let zonaResultats = document.getElementById("resultats");
     zonaResultats.innerHTML = "<h3>Nombre d'accidents al districte " + districteSeleccionat + ": " + numAccidents + "<h3>";
 }  
