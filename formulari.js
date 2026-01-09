@@ -61,11 +61,11 @@ function correuElectronic(){
     for (let i = 0; i < email.length; i++) {
         if (email[i] === "@") {
             arrova++;
-            posicioArrova = i;
+            posicioArrova = i; // Es guarda la posiió de l'arrova trobada
         }
     }
 
-    if (arrova !== 1) {
+    if (arrova !== 1) { //si no hi ha arrova no és vàlid
         console.log("Error: El correu electrònic no és vàlid.");
         document.getElementById("correuElectronic").focus();
         return false;
@@ -77,9 +77,9 @@ function correuElectronic(){
         }
     }
 
-    if (!punt) {
+    if (!punt) { //si no hi ha cap punt després de l'arrova no és vàlid 
         console.log("Error: El correu electrònic no és vàlid.");
-        document.getElementById("correuElectronic").focus();
+        document.getElementById("correuElectronic").focus(); //Si no és correcte retorna el focus al camp de correu electrònic
         return false;
     }
     return true;
